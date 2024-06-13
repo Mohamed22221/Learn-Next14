@@ -1,10 +1,15 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
-const page = () => {
-  return (
-    <div>home dash</div>
-  )
-}
+const PageDash = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/postss");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch the posts`);
+  }
+  const posts = await res.json();
 
-export default page
+
+  return <div>{posts[0].title}</div>;
+};
+
+export default PageDash;

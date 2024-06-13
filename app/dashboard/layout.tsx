@@ -4,14 +4,17 @@
 
 export default function RootLayout({
   children,
-  notifications
+  notifications,
+  users
 }: Readonly<{
   children: React.ReactNode;
   notifications : React.ReactNode
+  users : React.ReactNode
+
 }>) {
   return (
     <html lang="en">
-      <body >{children}{notifications}</body>
+      <body >{children}{users}{notifications}</body>
     </html>
   );
 }
