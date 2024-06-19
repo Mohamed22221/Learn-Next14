@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import MyLink from "@/shared/MyLink";
 
 export function Links() {
   const pathname = usePathname();
@@ -22,6 +23,10 @@ export function Links() {
           >
             Dashboard
           </Link>
+        </li>
+        <li>
+        <MyLink href="/dashboard" title="Dashboard Prefetch" prefetch={true} />
+
         </li>
       </ul>
     </nav>
