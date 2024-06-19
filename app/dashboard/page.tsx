@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const PageDash = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/postss");
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   if (!res.ok) {
     throw new Error(`Failed to fetch the posts`);
   }

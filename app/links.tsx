@@ -18,6 +18,7 @@ export function Links() {
           <Link
             className={`link ${pathname === "/dashboard" ? "active" : ""}`}
             href="/dashboard"
+            prefetch={true}
           >
             Dashboard
           </Link>
