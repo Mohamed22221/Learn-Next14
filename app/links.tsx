@@ -1,12 +1,10 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import Link from "next/link";
-import MyLink from "@/shared/MyLink";
 
 export function Links() {
   const pathname = usePathname();
-
   return (
     <nav>
       <ul>
@@ -19,15 +17,15 @@ export function Links() {
           <Link
             className={`link ${pathname === "/dashboard" ? "active" : ""}`}
             href="/dashboard"
-            prefetch={true}
+            
           >
             Dashboard
           </Link>
         </li>
-        <li>
+        {/* <li>
         <MyLink href="/dashboard" title="Dashboard Prefetch" prefetch={true} />
 
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
