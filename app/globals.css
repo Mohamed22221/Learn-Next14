@@ -4,3 +4,7 @@ html{
 .active{
     color: red;
 }
+.status{
+    padding: 40px;
+    background-color: aliceblue;
+}
