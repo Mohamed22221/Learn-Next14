@@ -15,11 +15,22 @@ export function Links() {
         </li>
         <li>
           <Link
-            className={`link ${pathname === "/dashboard" ? "active" : ""}`}
+            className={`link ${
+              pathname === "/dashboard" || pathname === "/dashboard/archived"
+                ? "active"
+                : ""
+            }`}
             href="/dashboard"
-            
           >
             Dashboard
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={`link ${pathname === "/success" ? "active" : ""}`}
+            href="/success"
+          >
+            Success
           </Link>
         </li>
         {/* <li>
