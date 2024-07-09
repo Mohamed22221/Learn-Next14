@@ -8,7 +8,7 @@ const pageUsers = async () => {
       throw new Error(`Failed to fetch the data`);
     }
     const users = await resUsers.json();
-    console.log(users[0].name)
+
   return (
     <div>pageUsers {users[0].name}</div>
   )

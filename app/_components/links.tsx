@@ -14,6 +14,16 @@ export function Links() {
           </Link>
         </li>
         <li>
+          <Link className={`link ${pathname === "/_about" ? "active" : ""}`} href="/_about">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link className={`link ${pathname === "/photos" ? "active" : ""}`} href="/photos">
+            Photos
+          </Link>
+        </li>
+        <li>
           <Link
             className={`link ${
               pathname === "/dashboard" || pathname === "/dashboard/archived"
