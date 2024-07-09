@@ -4,11 +4,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <section lang="en">
+
         <div className="status"> {children}</div>
        
-      </body>
-    </html>
+ 
+    </section>
   );
 }

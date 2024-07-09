@@ -1,4 +1,6 @@
 import React from "react";
+
+import Image from "next/image";
 type PhotosDetailsProps = {
   params: { id: string };
 };
@@ -12,8 +14,20 @@ const page = async ({ params }: PhotosDetailsProps) => {
     throw new Error(`Failed to fetch the data`);
   }
   const photo = await resPhoto.json();
-  console.log(params);
-  return <div>page</div>;
+
+  return (
+    <div>
+
+
+        <Image
+          src={photo[0].url}
+          alt={photo[0].title}
+          width={450}
+          height={450}
+        />
+        <h3>        {photo[0].title}{" "}</h3>
+    </div>
+  );
 };
 
 export default page;

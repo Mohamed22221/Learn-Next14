@@ -9,6 +9,7 @@ import React from "react";
  * @returns {JSX.Element} The rendered gallery section.
  */
 const Gallary = ({ photos }: any) => {
+  
   console.log(photos, "photos");
   return (
     // The main container for the gallery section
