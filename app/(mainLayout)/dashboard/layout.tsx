@@ -16,12 +16,12 @@ export default function RootLayout({
   children,
   notifications,
   users,
-  modalview
+
 }: Readonly<{
   children: React.ReactNode;
   notifications: React.ReactNode;
   users: React.ReactNode;
-  modalview : React.ReactNode
+
 }>) {
   const loginSegment = useSelectedLayoutSegment("notifications")
   
@@ -31,7 +31,8 @@ export default function RootLayout({
         {users}
         {loginSegment === "archived" && <h2>archived </h2>} 
         {notifications}
-        {modalview}
+
+
 
     </section>
   );
