@@ -1,9 +1,10 @@
+export const dynamic = 'force-static'
 import React from "react";
 import Gallary from "./gallary";
 
 const PhotosPage = async () => {
   const resPhotos = await fetch(
-    "http://jsonplaceholder.typicode.com/photos?_start=0&_limit=10"
+    "http://jsonplaceholder.typicode.com/photos?_start=0&_limit=100"
   );
 
   if (!resPhotos.ok) {

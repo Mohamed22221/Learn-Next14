@@ -15,8 +15,8 @@ const ModalComponent = ({children} : any) => {
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
-    router.push('/photos');
+    // setIsModalOpen(false);
+    router.back();
 
   };
 
