@@ -10,7 +10,6 @@ import React from "react";
  */
 const Gallary = ({ photos }: any) => {
   
-  console.log(photos, "photos");
   return (
     // The main container for the gallery section
     <div>
@@ -27,7 +26,7 @@ const Gallary = ({ photos }: any) => {
               height={250}
             />
           </Link>
-        ))}
+        )).slice(0, 1)}
       </div>
     </div>
   );
