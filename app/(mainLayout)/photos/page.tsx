@@ -56,7 +56,7 @@ const PhotosPage = async () => {
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>{post.title}</li>
-        )).slice(0, 1)}
+        ))}
       </ul>
       </Suspense>
       <h1>Comments</h1>
@@ -64,7 +64,7 @@ const PhotosPage = async () => {
       <ul>
         {comments.map((post: any) => (
           <li key={post.id}>{post.name}</li>
-        )).slice(0, 1)}
+        ))}
       </ul>
       </Suspense>
       <h1>todos</h1>
@@ -72,7 +72,7 @@ const PhotosPage = async () => {
       <ul>
         {todos.map((todo: any) => (
           <li key={todo.id}>{todo.title}</li>
-        )).slice(0, 1)}
+        ))}
       </ul>
       </Suspense>
     </div>

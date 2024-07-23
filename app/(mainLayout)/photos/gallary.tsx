@@ -26,7 +26,7 @@ const Gallary = ({ photos }: any) => {
               height={250}
             />
           </Link>
-        )).slice(0, 1)}
+        ))}
       </div>
     </div>
   );
