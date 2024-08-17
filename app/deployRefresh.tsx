@@ -6,13 +6,11 @@ export async function DeployRefreshManager() {
     async () => {
       const ApibuildId: any = await fetch(`/api`);
       const  {buildId}  = await ApibuildId.json();
-      console.log(buildId, "buildIdbuildId");
-
       if (buildId && process.env.buildId && buildId !== process.env.buildId) {
         console.log("There's a new version deployed that we need to load");
       }
     },
-    { interval: 5000 }
+    { interval: 30000 }
   );
   return null;
 }
