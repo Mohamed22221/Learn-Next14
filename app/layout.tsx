@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <DeployRefreshManager/>
-      <body className={inter.className}>{children} </body>
+
+      <body className={inter.className}>{children}       <DeployRefreshManager/> </body>
     </html>
   );
 }
