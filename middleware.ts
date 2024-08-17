@@ -1,15 +1,14 @@
 
-import { NextRequest, NextResponse } from "next/server";
-import { isUserAuthenticated } from "./session";
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+ 
+export function middleware(request: NextRequest) {
+  //enhanced cookies
+  request.cookies.set('token', 'abc123');
+  const token = request.cookies.get('token');
+  const { pathname, searchParams , buildId  } = request.nextUrl  
 
-const protectedRoutes = ["/photos"];
-export default function middleware(req: NextRequest) {
-  if (
-    !isUserAuthenticated &&
-    protectedRoutes.includes(req?.nextUrl?.pathname)
-  ) {
-    const absoluteUrl = new URL("/", req.nextUrl.origin);
-    return NextResponse.redirect(absoluteUrl.toString());
-  }
-  return NextResponse.next();
+
+  
+  console.log(`currentUrl: ${buildId}`);
 }
