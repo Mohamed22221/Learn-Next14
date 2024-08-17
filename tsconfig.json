@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(mainLayout)/photos/_components/formPosts.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(mainLayout)/photos/_components/formPosts.jsx", "app/deployRefresh.js"],
   "exclude": ["node_modules"]
 }

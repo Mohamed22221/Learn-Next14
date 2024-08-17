@@ -1,34 +1,14 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import request from 'superagent';
+import { useInterval } from "./_components/intervelDeploy";
 
-function useInterval(
-  callback: any,
-  { interval, lead }: { interval: number; lead?: boolean },
-): void {
-  const savedCallback = useRef<any>(null);
 
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
+export async function DeployRefreshManager() {
+  
 
-  useEffect(() => {
-    const tick = (): void => savedCallback.current();
-
-    lead && tick();
-
-    if (interval !== null) {
-      const id = setInterval(tick, interval);
-
-      return () => clearInterval(id);
-    }
-  }, [interval]);
-}
-
-export function DeployRefreshManager(): any {
   useInterval(
     async () => {
-      const { buildId } = (await request.get('/api')).body;
+      const buildId : any = await fetch(`/api`);
+      console.log(buildId)
 
       if (buildId && process.env.buildId && buildId !== process.env.buildId) {
         console.log('There\'s a new version deployed that we need to load');
