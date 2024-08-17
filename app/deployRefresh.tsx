@@ -18,6 +18,7 @@ export const DeployRefreshManager = () => {
     async () => {
       const ApibuildId: any = await fetch(`/api`);
       const { buildId } = await ApibuildId.json();
+      console.log(buildId)
 
       if (buildId && process.env.buildId && buildId !== process.env.buildId) {
         setIsModalOpen(true);
