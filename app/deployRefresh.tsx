@@ -10,7 +10,7 @@ export async function DeployRefreshManager() {
         console.log("There's a new version deployed that we need to load");
       }
     },
-    { interval: 30000 }
+    { interval: 40000 }
   );
   return null;
 }
