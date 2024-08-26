@@ -16,10 +16,10 @@ const UserPage = async ({ params }: { params: { idUser: string } }) => {
 
 type Props = {
   params: { idUser: string };
-  parent: any;
+
 };
 
-export async function generateMetadata({ params , parent }: Props) {
+export async function generateMetadata({ params  }: Props) {
   const user = await fetch(
     `https://api.escuelajs.co/api/v1/users/${params.idUser}`
   );
