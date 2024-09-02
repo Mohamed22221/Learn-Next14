@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { Suspense } from "react";
 
+ 
 const page = async () => {
   const users = await fetch("https://api.escuelajs.co/api/v1/users");
 

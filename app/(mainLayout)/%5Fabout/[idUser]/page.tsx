@@ -1,6 +1,13 @@
 import React from "react";
-
+export async function generateStaticParams() {
+  return [
+    {
+      idUser: "1",
+    },
+  ];
+}
 const UserPage = async ({ params }: { params: { idUser: string } }) => {
+  console.log(params);
   const user = await fetch(
     `https://api.escuelajs.co/api/v1/users/${params.idUser}`
   );
@@ -16,23 +23,21 @@ const UserPage = async ({ params }: { params: { idUser: string } }) => {
 
 type Props = {
   params: { idUser: string };
-
 };
 
-export async function generateMetadata({ params  }: Props) {
+export async function generateMetadata({ params }: Props) {
   const user = await fetch(
     `https://api.escuelajs.co/api/v1/users/${params.idUser}`
   );
   const usersApi = await user.json();
 
-
   return {
     title: {
       absolute: `${usersApi.name} | ${usersApi.role} `,
-    } ,
+    },
     description: `Role: ${usersApi.role} - Email: ${usersApi.email}`,
     openGraph: {
-      images:  [
+      images: [
         {
           url: usersApi.avatar,
           width: 1200,
@@ -40,10 +45,9 @@ export async function generateMetadata({ params  }: Props) {
         },
       ],
       title: `${usersApi.name} | ${usersApi.role} Learn Next 14`,
-      description: 'The React Framework for the Web',
+      description: "The React Framework for the Web",
       url: `https://learn-next14-nine.vercel.app/_about/${usersApi.id}`,
-      siteName: 'Learn Next.js 14',
-
+      siteName: "Learn Next.js 14",
     },
     icons: {
       icon: usersApi.avatar,
@@ -52,4 +56,5 @@ export async function generateMetadata({ params  }: Props) {
     },
   };
 }
+
 export default UserPage;
