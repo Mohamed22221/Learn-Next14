@@ -1,10 +1,26 @@
 import React from "react";
+import { NextResponse } from 'next/server';
+
 export async function generateStaticParams() {
-  return [
-    {
-      idUser: "1",
-    },
-  ];
+  try {
+    const user = await fetch(`https://api.escuelajs.co/api/v1/users`);
+
+    if (!user.ok) {
+      // This will activate the closest `error.js` Error Boundary.
+      throw new Error(`Failed to fetch the data`);
+    }
+  
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 },
+    );
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch consultants");
+  }
+
+
+
 }
 const UserPage = async ({ params }: { params: { idUser: string } }) => {
   console.log(params);
